@@ -1,6 +1,5 @@
 import { Given, Then, When } from '@wdio/cucumber-framework';
-//import { someMethod } from '@testing';
-import { someMethod } from '../../../../../libs/testing/src/index'
+import { someMethod } from '@testing';
 import LoginPage from '../../support/page-objects/login.page';
 import SecurePage from '../../support/page-objects/secure.page';
 
@@ -10,6 +9,7 @@ const pages = {
 
 Given(/^mobile-login: I am on the (\w+) page$/, async (page) => {
   await pages[page].open();
+  console.log(someMethod())
 });
 
 When(/^mobile-login: I login with (\w+) and (.+)$/, async (username, password) => {
