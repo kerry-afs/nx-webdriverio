@@ -7,7 +7,8 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "create": "nx generate @nrwl/node:library testing",
+    "test": "npx wdio run apps/demo-e2e/wdio.conf.ts --autoCompileOpts.tsNodeOpts.project=apps/demo-e2e/tsconfig.json"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@nrwl/angular": "13.9.4",
+    "@nrwl/node": "^13.9.4",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -32,7 +34,7 @@
     "@angular/cli": "~13.2.0",
     "@angular/compiler-cli": "~13.2.0",
     "@angular/language-service": "~13.2.0",
-    "@nrwl/cli": "13.9.4",
+    "@nrwl/cli": "^13.9.4",
     "@nrwl/cypress": "13.9.4",
     "@nrwl/eslint-plugin-nx": "13.9.4",
     "@nrwl/jest": "13.9.4",
@@ -42,6 +44,11 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.10.0",
     "@typescript-eslint/parser": "~5.10.0",
+    "@wdio/cli": "^7.19.1",
+    "@wdio/cucumber-framework": "^7.19.1",
+    "@wdio/local-runner": "^7.19.1",
+    "@wdio/spec-reporter": "^7.19.1",
+    "chromedriver": "^99.0.0",
     "cypress": "^9.1.0",
     "eslint": "~8.7.0",
     "eslint-config-prettier": "8.1.0",
@@ -51,6 +58,8 @@
     "nx": "13.9.4",
     "prettier": "^2.5.1",
     "ts-jest": "27.0.5",
-    "typescript": "~4.5.2"
+    "typescript": "~4.5.2",
+    "wdio-chromedriver-service": "^7.3.2",
+    "webdriverio": "^7.19.1"
   }
 }
